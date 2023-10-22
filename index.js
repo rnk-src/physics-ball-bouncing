@@ -57,7 +57,12 @@ class Circle {
             }
         }
 
-        this.dy += 0.2;
+        this.dy += 0.25;
+        if (this.dx < -0.01) {
+            this.dx += 0.01;
+        } else if (this.dx > 0.01){
+            this.dx -= 0.01;
+        }
 
         this.xPosition += this.dx;
         this.yPosition += this.dy;
@@ -74,7 +79,7 @@ class Circle {
 //     allCircles[numbers].draw(context);
 // }
 
-let ball = new Circle(100, 100, 50, "red", 50);
+let ball = new Circle(100, 100, 50, "red", 75);
 
 ball.draw(context);
 
